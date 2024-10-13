@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "detoxify-youtube",
+  "version": "1.0",
+  "description": "Blur irrelevant YouTube videos based on user-defined keywords",
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "48": "assets/icon48.png",
+      "128": "assets/icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://www.youtube.com/*"],
+      "js": ["content.js"],
+      "css": ["styles.css"]
+    }
+  ],
+  "icons": {
+    "48": "assets/icon48.png",
+    "128": "assets/icon128.png"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'; script-src-elem 'self' 'unsafe-inline'"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["content.js"],
+      "matches": ["*://www.youtube.com/*"]
+    }
+  ]
+}

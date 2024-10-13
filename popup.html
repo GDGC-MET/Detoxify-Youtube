@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>YouTube Video Filter</title>
+  <style>
+    body { width: 300px; padding: 10px; font-family: Arial, sans-serif; }
+    input { width: 100%; margin-bottom: 10px; }
+    button { width: 100%; }
+  </style>
+</head>
+<body>
+  <h2>YouTube Video Filter</h2>
+  <input type="text" id="keywords" placeholder="Enter keywords (comma-separated)">
+  <button id="save">Save Keywords</button>
+  <div id="status"></div>
+  <script src="popup.js"></script>
+  <script>
+    // Error handling
+    window.onerror = function(message, source, lineno, colno, error) {
+      console.error("Error occurred: ", message, "Source: ", source, "Line: ", lineno);
+      document.getElementById('status').textContent = "An error occurred. Please check the console and reload.";
+    };
+
+    // Ensure DOM is fully loaded before executing scripts
+    document.addEventListener('DOMContentLoaded', function() {
+      console.log("DOM fully loaded and parsed");
+    });
+  </script>
+</body>
+</html>

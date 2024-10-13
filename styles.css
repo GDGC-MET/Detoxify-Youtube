@@ -1,0 +1,8 @@
+.blur-video {
+    filter: blur(5px);
+    transition: filter 0.3s ease;
+  }
+  
+  .blur-video:hover {
+    filter: blur(0);
+  }
